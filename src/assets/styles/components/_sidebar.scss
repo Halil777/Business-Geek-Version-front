@@ -1,0 +1,136 @@
+.sidebar{
+  width: 300px;
+  height: 100vh;
+  @include flex(column,flex-start);
+  border-right: 1px solid rgba(177, 174, 174, 0.2);
+  border-left: 1px solid rgba(177, 174, 174, 0.2);
+  background-color: $black;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: 0.3s;
+  @include tablet{
+    left: -310px;
+    z-index: 2;
+    box-shadow: 3px 0px 12px 2px rgba(145, 142, 142, 0.25);
+  }
+
+  .sidebar_logo_con{
+    background-color: #0A0A0E;
+    z-index: 4;
+    width: 100%;
+    @include tablet{
+      // margin-left: -80px;
+    }
+  }
+  .sidebar_logo{
+    background-color: white;
+    padding: 40px 50px;
+    @include flex(row,center,center);
+    width: fit-content;
+    background: radial-gradient(50% 50% at 49.59% 50%, rgba(255, 212, 130, 0.4) 0%, rgba(126, 104, 83, 0) 100%);
+  }
+
+  &.open{
+    left: 0px;
+  }
+
+  .sidebar_left_line{
+    width: 1.5px;
+    background-image: linear-gradient(rgba(177, 174, 174, 0.0575),rgba(177, 174, 174, 1),rgba(177, 174, 174, 0.0575));
+    height: 100%;
+
+  }
+  .sidebar_lists{
+    height: 100%;
+    @include flex(row,flex-start);
+    width: 100%;
+    padding-left: 25%;
+    box-sizing: border-box;
+    &_con{
+      margin-top: -30%;
+    }
+    &_list{
+      color: $gray;
+      @include flex(row,flex-start);
+      margin-bottom: 32px;
+      font-size: 20px;
+      cursor: pointer;
+      &.active{
+        a{
+          color: $yellow;
+        }
+        span.out{
+          border: 1px solid $yellow;
+          padding: 5px;
+          margin-left: -12px;
+          @include flex(row,center,center);
+
+          span.in{
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+            border-radius: 50%;
+            background: $yellow;
+          }
+        }
+      }
+
+      span.out{
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 1px solid #B1AEAE;
+        background-color: $black;
+        margin-left: -7.5px;
+        margin-right: 16px;
+      }
+      .list_text{
+        @include flex(row,center);
+        text-decoration: none;
+        color: white;
+        padding-top: 3px;
+      }
+    }
+    &_language{
+      margin-left: -10.5px;
+      background-color: $black;
+      width: fit-content;
+      @include flex();
+      #language{
+        @include flex();
+        cursor: pointer;
+        
+
+        &:hover ~ .languages{
+          width: 200px;
+        }
+      }
+
+      .languages{
+        @include flex(row,flex-start);
+        width: 0;
+        overflow: hidden;
+        transition: 0.8s;
+
+        &:hover{
+          width: 200px;
+        }
+        div{
+          @include flex();
+          margin-left: 16px;
+          font-size: 20px;
+          cursor: pointer;
+
+          &:hover{
+            opacity: 0.8;
+          }
+
+          &.active{
+            color: $yellow;
+          }
+        }
+      }
+    }
+  }
+}

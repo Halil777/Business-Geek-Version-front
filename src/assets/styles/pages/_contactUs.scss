@@ -1,0 +1,195 @@
+.contact{
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  @include mobile{
+    padding-bottom: 50px
+  }
+  .contact_content{
+    @include flex();
+    width: 100%;
+    position: absolute;
+    top: 50vh;
+    transform: translate(0, -50%);
+
+    @include mobile{
+      @include flex(column-reverse);
+      top: 150px;
+      transform: translate(0,0);
+    }
+    .contact_content_left{
+      color: $yellow;
+      width: 45%;
+
+      @include mobile{
+        width: 100%;
+        margin-top: 30px;
+        padding-left: 5%;
+        box-sizing: border-box;
+      }
+
+      .left_title{
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 40px;
+
+        @include tablet{
+           display: none
+        }
+      }
+      .left_form{
+        @include flex(row,flex-start);
+        margin-bottom: 40px;
+        .left_form_icon{
+          @include flex();
+        }
+        .left_form_info{
+          font-size: 20px;
+          line-height: 30px;
+          margin-left: 20px;
+        }
+      }
+    }
+    .contact_content_right{
+      width: 45%;
+      background: rgba(10, 10, 14, 0.7);
+      box-shadow: -1px -1px 20px 10px rgba(197, 196, 196, 0.2), 6px 6px 12px 2px rgba(0, 0, 0, 0.7);
+      padding: 30px 20px;
+
+      @include mobile{
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .right_form_input{
+        margin-bottom: 20px;
+        label{
+          .text{
+            color: $gray;
+            margin-bottom: 8px;
+            display: inline-block
+          }
+          .input{
+            @include flex(row,flex-start);
+            border: 1px solid #B1AEAE;
+            border-radius:16px;
+            overflow: hidden;
+            height: 40px;
+            
+            span{
+              height: 100%;
+              max-width: 40px;
+              min-width: 40px;
+              box-sizing: border-box;
+              border-right: 1px solid $gray;
+              @include flex(row,center);
+            }
+            input{
+              background: none;
+              border: none;
+              padding-right: 15px;
+              padding-left: 5px;
+              outline: none;
+              width: 100%;
+              font-size: 16px;
+              color: white;
+              height: 40px;
+            }
+          }
+          .textInput{
+            height: 60px !important;
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            @include flex(row,flex-start);
+            border: 1px solid #B1AEAE;
+            span{
+              height: 100%;
+              max-width: 40px;
+              min-width: 40px;
+              display: inline-block;
+              box-sizing: border-box;
+              @include flex(row,center);
+              border-right: 1px solid #B1AEAE;
+              margin-right: 3px;
+            }
+            textarea{
+              width: 100%;
+              max-height: 50px;
+              min-height: 50px;
+              border: none;
+              resize: none;
+              outline: none;
+              background: none;
+              color: white;
+              font-size: 16px;
+              font-family: epilogue;
+              & {
+                -ms-overflow-style: none;  /* Internet Explorer 10+ */
+                scrollbar-width: none;  /* Firefox */
+              }
+              &::-webkit-scrollbar { 
+                  display: none;  /* Safari and Chrome */
+              }
+            }
+          }
+        }
+
+        &:focus-within{
+          label{
+            .text{
+              color: $yellow;
+            }
+            .input,.textInput{
+              border: 1px solid $yellow;
+              span{
+                border-right: 1px solid $yellow;
+              }
+            }
+          }
+        }
+      }
+
+      button{
+        width: 100%;
+        color: $black;
+        text-align: center;
+        border-radius: 50px;
+        background: linear-gradient(90deg, #FED010 0%, rgba(254, 208, 16, 0.646569) 116.93%, rgba(254, 208, 16, 0) 155.41%);
+        padding: 10px 0;
+        font-size: 16px;
+        font-weight: 500;
+        border: none;
+      }
+    }
+  }
+
+  .contact_footer{
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%,0);
+
+    @include mobile{
+      color: $yellow;
+      position: absolute;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .contact_alert,.contact_alert2{
+    background-color: $yellow;
+    color: black;
+    padding: 10px 50px;
+    border-radius: 5px;
+    width: fit-content;
+    position: absolute;
+    bottom: 100px;
+    right: 0;
+  }
+  .contact_alert2{
+    background-color: red !important;
+    color: white;
+  }
+}

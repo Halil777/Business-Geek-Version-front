@@ -1,0 +1,96 @@
+//configs
+@import './config/variables';
+@import './config/mixins';
+@import './config/fonts';
+
+// components
+@import './components/layout';
+@import './components/sidebar';
+@import './components/sun';
+@import './components/ReactSlider';
+
+//pages
+@import './pages/index';
+@import './pages/projects';
+@import './pages/news';
+@import './pages/contactUs';
+@import './pages/about';
+@import './pages/service';
+@import './pages/oneNews';
+
+
+// html{
+//   scroll-behavior: smooth;
+// }
+
+body{
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  background-color: $black;
+  color: white;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+.container{
+  width: 95%;
+  margin: 0 auto 0;
+  max-width: 1420px;
+  padding-left: 300px;
+  @include flex();
+  box-sizing: border-box;
+  @include tablet{
+    padding-left: 0;
+  }
+}
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.app,.layout{
+  width: 100%;
+  display: flex;
+}
+
+.containerleft{
+  // background-color: $black;
+  height: 100vh;
+  display: flex;
+  flex: 1;
+}
+.containerright{
+  height: 100vh;
+  display: flex;
+  flex: 1;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $yellow; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #cca914; 
+  cursor: pointer;
+}

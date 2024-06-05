@@ -1,0 +1,25 @@
+.mobileMenuIcons{
+  display: none;
+  @include tablet{
+    position: fixed;
+    width: 95%;
+    left: 2.5%;
+    top: 50px;
+    @include flex(row,space-between,center);
+    // cursor: pointer;
+    z-index: 2;
+    svg{
+      cursor: pointer;
+    }
+    a{
+      height: 30px;
+      width: 30%;
+    }
+    img{
+      padding: 40px 50px;
+      margin-top: -50px;
+      margin-left: -20px;
+      background: radial-gradient(50% 50% at 49.59% 50%, rgba(255, 212, 130, 0.4) 0%, rgba(126, 104, 83, 0) 100%);
+    }
+  }
+}

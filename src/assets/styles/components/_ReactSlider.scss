@@ -1,0 +1,74 @@
+.slider{
+  .slider_slide{
+    height: 325px;
+    @include flex();
+    .boxes_box{
+      width: 100%;
+      @include flex(column,center);
+      .boxes_box_image{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #F8B23E;
+        transition: 1s;
+        overflow: hidden;
+        img{
+          height: 100px;
+          width: 100px;
+          object-fit: cover;
+          transition: 1s;
+        }
+      }
+      .info{
+        text-align: center;
+        margin-top: 24px;
+        height: 0;
+        overflow-y: hidden;
+        transition: 1s;
+        .boxes_box_name{
+          font-size: 20px;
+          font-weight: 500;
+          margin-bottom: 20px;
+        }
+        .boxes_box_major{
+          font-size: 16px;
+          font-weight: 500;
+          padding: 8px 16px;
+          border: 1px solid #FED010;
+          border-radius: 32px;
+          margin-bottom: 20px;
+        }
+        .boxes_box_email{
+          color: $yellow;
+          font-weight: 500;
+          opacity: 0.9;
+          min-width:250px;
+        }
+      }
+
+      &.active{
+        .boxes_box_image{
+          width: 150px;
+          height: 150px;
+          overflow: hidden;
+          img{
+            height: 150px;
+            width: 150px;
+            object-fit: cover;
+          }
+        }
+        .info{
+          height: 150px;
+        }
+      }
+    }
+  }
+}
+
+
+.swiper-button-next,.swiper-button-prev{
+  color: #B1AEAE !important;
+  &::after{
+    font-size: 25px !important;
+  }
+}
